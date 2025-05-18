@@ -83,7 +83,7 @@ function chunkArray<T>(array: T[], size: number): T[][] {
 const Skills = () => (
   <section
     id="skills"
-    className="section-gap bg-background relative overflow-hidden scroll-mt-24"
+    className="section-gap bg-background relative scroll-mt-24"
   >
     <SectionMotion>
       <div className="mb-10">

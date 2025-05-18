@@ -9,13 +9,13 @@ export default function Hero() {
   const [text] = useTypewriter({
     words: ["Frontend Developer"],
     loop: true,
-    typeSpeed: 90,
+    typeSpeed: 120,
     deleteSpeed: 70,
   });
 
   return (
     <section id="Hero" className="scroll-mt-24">
-      <SectionMotion className="pt-24 text-white flex items-center min-h-screen scroll-mt-24">
+      <SectionMotion className=" pt-16 text-white flex justify-center items-center h-screen scroll-mt-24">
         <div className="flex flex-col-reverse md:flex-row gap-5 justify-between items-center w-full">
           <div className="text-center md:text-left space-y-4 max-w-md ">
             <Title as={"h1"} underline={false}>
@@ -56,7 +56,7 @@ export default function Hero() {
                 //src="https://img.freepik.com/premium-photo/portrait-successful-programmer-game-developer-coder-guy-uses-computer-laptop-work-game-design-hacker-boy-generative-ai-cyber-gamer_117038-7603.jpg?w=996"
                 src="/profile.jpg"
                 alt="AbdulrahmanHabiba"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover "
               />
             </div>
           </div>

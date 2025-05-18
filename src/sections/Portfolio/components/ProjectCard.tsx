@@ -20,7 +20,7 @@ import {
   SiTailwindcss,
 } from "react-icons/si";
 import { FaReact, FaGithub } from "react-icons/fa";
-import { FiExternalLink } from "react-icons/fi";
+import { RiLinksFill } from "react-icons/ri";
 import AppButton from "@/components/ui/AppButton";
 import { MdOutgoingMail } from "react-icons/md";
 import Skeleton from "@/components/ui/Skeleton";
@@ -73,7 +73,7 @@ const ProjectCard = ({
     <div className="group relative flex flex-col bg-card border border-[color:var(--secondary)] rounded-3xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-[0_8px_32px_0_var(--neon-pink)] hover:border-[color:var(--neon-pink)]">
       {/* Project Image */}
       <div className="relative overflow-hidden h-48 md:h-40 lg:h-44 w-full">
-        {!imgLoaded && <Skeleton className="absolute inset-0 w-full h-full" />}
+        {!imgLoaded && <Skeleton className="absolute inset-0 w-full h-full " />}
         <img
           src={image}
           alt={title}
@@ -120,7 +120,7 @@ const ProjectCard = ({
               size="sm"
               className="w-full flex items-center justify-center gap-2"
             >
-              Live <FiExternalLink size={18} />
+              Live <RiLinksFill size={18} />
             </AppButton>
           </a>
           {code && (

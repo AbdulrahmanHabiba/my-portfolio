@@ -6,7 +6,7 @@ import SectionMotion from "@/components/ui/SectionMotion";
 const About = () => (
   <section
     id="about"
-    className="section-gap text-white space-y-12 relative scroll-mt-28"
+    className="  text-white space-y-12 relative scroll-mt-28"
   >
     <SectionMotion>
       <Title as="h2" underline>
