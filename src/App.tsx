@@ -9,6 +9,7 @@ import Container from "./components/layout/Container";
 import About from "@/sections/About/About";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "react-hot-toast";
+import ScrollToTopButton from "@/components/ui/ScrollToTopButton";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           </Container>
         </main>
         <Footer />
+        <ScrollToTopButton />
       </ThemeProvider>
     </>
   );

@@ -8,7 +8,7 @@ function SocialIcon({ url, label, children }: { url: string; label: string; chil
         target="_blank"
         rel="noopener noreferrer"
         aria-label={label}
-        className="group inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#232a43] text-blue-400 hover:bg-blue-900 hover:text-blue-300 transition-colors duration-150 border border-[#23263a]"
+        className="group inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#232a43] text-blue-400 hover:bg-blue-600 hover:text-blue-300 transition-colors duration-150 border border-[#23263a] hover:border-blue-700"
       >
         <span className="flex items-center justify-center">
           {children}
@@ -17,13 +17,7 @@ function SocialIcon({ url, label, children }: { url: string; label: string; chil
     );
   }
   
-// Only WhatsApp and Email for main contact
-// const mainContacts = [
-//   { icon: <FaWhatsapp size={20} />, url: "https://wa.me/201113951795", label: "WhatsApp" },
-//   { icon: <FaEnvelope size={20} />, url: "mailto:abdulrahmanhabibh@gmail.com", label: "Email" },
-// ];
 
-// Restore social icons for the bottom section
   const socialLinks = [
     { icon: <FaLinkedin size={20} />, url: "https://www.linkedin.com/in/abdulrahman-habiba", label: "LinkedIn" },
     { icon: <FaGithub size={20} />, url: "https://github.com/AbdulrahmanHabiba", label: "GitHub" },
