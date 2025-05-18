@@ -15,7 +15,7 @@ export default function Hero() {
 
   return (
     <section id="Hero" className="scroll-mt-24">
-      <SectionMotion className=" pt-16 text-white flex justify-center items-center h-screen scroll-mt-24">
+      <SectionMotion className="pt-5 md:pt-16 text-white flex justify-center items-center h-screen scroll-mt-24">
         <div className="flex flex-col-reverse md:flex-row gap-5 justify-between items-center w-full">
           <div className="text-center md:text-left space-y-4 max-w-md ">
             <Title as={"h1"} underline={false}>
