@@ -41,7 +41,7 @@ It showcases projects, skills, and contact information in a clean and minimal de
 
 ```bash
 # Clone the repo
-git clone https://github.com/AbdulrahmanHabiba/portfolio-website.git
+git clone https://github.com/AbdulrahmanHabiba/my-portfolio
 
 # Navigate to the folder
 cd portfolio-website
