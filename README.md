@@ -1,55 +1,53 @@
-# React + TypeScript + Vite
+# Portfolio Website 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and fully responsive personal portfolio built with **React 19**, **TypeScript**, and **Vite**.  
+It showcases projects, skills, and contact information in a clean and minimal design with smooth animations.
 
-Currently, two official plugins are available:
+## 🔗 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[👉 View Website](https://abdulrahman-habiba.vercel.app)
 
-## Expanding the ESLint configuration
+## 📸 Preview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+![Portfolio Screenshot](https://res.cloudinary.com/dnvlh7gm3/image/upload/v1752553420/portfolio-preview.png)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 💡 Features
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- 🖼️ Responsive design for all screen sizes.
+- ⚛️ Built with **React 19** and **TypeScript** using **Vite** for blazing fast performance.
+- 🎨 Styled with **Tailwind CSS** and **ShadCN UI** components.
+- 🎞️ Animated sections with **Framer Motion**.
+- 📧 Contact form using **EmailJS** integration.
+- 🔔 Notification system via **React Hot Toast**.
+- ⌨️ Dynamic typing effect with **React Typewriter**.
+- 🌙 Dark mode ready (optional).
+- 🗃️ Project section loaded from a config file for easy updates.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛠️ Tech Stack
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
-# my-portfolio
+| Tech            | Purpose                        |
+|-----------------|--------------------------------|
+| React 19        | UI Framework                   |
+| TypeScript      | Type Safety                    |
+| Vite            | Lightning Fast Build Tool      |
+| Tailwind CSS    | Utility-first CSS              |
+| ShadCN UI       | Pre-built Accessible Components|
+| Framer Motion   | Animations                     |
+| EmailJS         | Contact Form Integration       |
+| React Hot Toast | Notifications                  |
+| React Typewriter| Typing Animation               |
+
+## 📦 Getting Started
+
+```bash
+# Clone the repo
+git clone https://github.com/AbdulrahmanHabiba/portfolio-website.git
+
+# Navigate to the folder
+cd portfolio-website
+
+# Install dependencies
+npm install
+
+# Start the dev server
+npm run dev
