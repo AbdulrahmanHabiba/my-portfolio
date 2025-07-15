@@ -18,9 +18,12 @@ import {
   SiRedux,
   SiStrapi,
   SiTailwindcss,
+  SiShadcnui ,
+  SiSanity 
 } from "react-icons/si";
+
 import { FaReact, FaGithub } from "react-icons/fa";
-import { RiLinksFill } from "react-icons/ri";
+import { RiLinksFill ,RiShieldKeyholeFill } from "react-icons/ri";
 import AppButton from "@/components/ui/AppButton";
 import { MdOutgoingMail } from "react-icons/md";
 import Skeleton from "@/components/ui/Skeleton";
@@ -57,7 +60,12 @@ const techIcons: Record<string, React.ElementType> = {
   "Redux Toolkit": SiRedux,
   Strapi: SiStrapi,
   "React Email": MdOutgoingMail,
-  "Tailwind CSS": SiTailwindcss,
+  "ShadCN UI" : SiShadcnui ,
+  "NextAuth" : RiShieldKeyholeFill ,
+  "Sanity" : SiSanity ,
+
+
+
 };
 
 const ProjectCard = ({

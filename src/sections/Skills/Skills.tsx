@@ -12,9 +12,12 @@ import {
   SiCss3,
   SiGit,
   SiStripe,
+  SiShadcnui,
+  SiSanity,
 } from "react-icons/si";
 import { FaRegCircle } from "react-icons/fa";
 import { MdOutlineAccountCircle } from "react-icons/md";
+import { RiShieldKeyholeFill } from "react-icons/ri";
 import Title from "@/components/ui/Title";
 import SectionMotion from "@/components/ui/SectionMotion";
 
@@ -30,18 +33,19 @@ const skillsRows = [
       name: "Context API",
       icon: <FaRegCircle size={36} className="text-green-400" />,
     },
+    { name: "Sanity", icon: <SiSanity size={36} className="text-red-400" /> },
+
     {
       name: "TypeScript",
       icon: <SiTypescript size={36} className="text-blue-400" />,
     },
-    {
-      name: "JavaScript",
-      icon: <SiJavascript size={36} className="text-yellow-400" />,
-    },
+
     {
       name: "Tailwind CSS",
       icon: <SiTailwindcss size={36} className="text-teal-300" />,
     },
+    { name: "ShadCN UI", icon: <SiShadcnui size={36} className="text-violet-400" /> },
+
   ],
   [
     {
@@ -60,6 +64,8 @@ const skillsRows = [
       name: "Clerk",
       icon: <MdOutlineAccountCircle size={36} className="text-pink-400" />,
     },
+    { name: "NextAuth", icon: <RiShieldKeyholeFill size={36} className="text-green-400" /> },
+
     {
       name: "Stripe",
       icon: <SiStripe size={36} className="text-indigo-500" />,
@@ -68,6 +74,10 @@ const skillsRows = [
   [
     { name: "HTML5", icon: <SiHtml5 size={36} className="text-orange-400" /> },
     { name: "CSS3", icon: <SiCss3 size={36} className="text-blue-400" /> },
+    {
+      name: "JavaScript",
+      icon: <SiJavascript size={36} className="text-yellow-400" />,
+    },
     { name: "Git", icon: <SiGit size={36} className="text-orange-500" /> },
   ],
 ];
