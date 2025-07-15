@@ -60,6 +60,7 @@ const techIcons: Record<string, React.ElementType> = {
   "Redux Toolkit": SiRedux,
   Strapi: SiStrapi,
   "React Email": MdOutgoingMail,
+  "Tailwind CSS": SiTailwindcss, 
   "ShadCN UI" : SiShadcnui ,
   "NextAuth" : RiShieldKeyholeFill ,
   "Sanity" : SiSanity ,
