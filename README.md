@@ -41,3 +41,18 @@ This portfolio not only showcases my **skills, projects, and services** as a Fro
 ├── pages → Page components
 ├── sections → Portfolio sections
 └── types → TypeScript definitions
+
+## 📦 Getting Started
+
+```bash
+# Clone the repo
+git clone https://github.com/AbdulrahmanHabiba/my-portfolio
+
+# Navigate to the folder
+cd portfolio-website
+
+# Install dependencies
+npm install
+
+# Start the dev server
+npm run dev
