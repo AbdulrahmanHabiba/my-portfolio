@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import Admin from "@/pages/Admin";
 import Home from "@/pages/Home";
 import { UserProvider } from '@/lib/context/UserContext';
+import NotFound from "./pages/NotFound";
 
 
 
@@ -22,6 +23,7 @@ function App() {
         <Header />
         <main>
           <Routes>
+            <Route path="*" element={<NotFound />} />
             <Route path="/" element={<Home />} />
             <Route path="/admin" element={<Admin />} />
           </Routes>
