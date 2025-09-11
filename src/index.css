@@ -1,3 +1,7 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+
 /* index.css */
 body {
   overflow-x: hidden;
@@ -7,8 +11,6 @@ body {
   overflow-x: hidden;
 } */
 
-@import "tailwindcss";
-@import "tw-animate-css";
 
 /* Custom Variant */
 @custom-variant dark (&:is(.dark *));
@@ -63,7 +65,33 @@ body {
   /* (other shared tokens if needed) */
 }
 
-/* Dark Theme (Default) */
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(220, 9%, 9%);
+  --card: hsl(220, 14%, 98%);
+  --card-foreground: hsl(220, 9%, 9%);
+  --popover: hsl(220, 14%, 98%);
+  --popover-foreground: hsl(220, 9%, 9%);
+  --primary: hsl(220, 9%, 9%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(220, 14%, 95%);
+  --secondary-foreground: hsl(220, 9%, 15%);
+  --muted: hsl(220, 14%, 95%);
+  --muted-foreground: hsl(220, 8%, 35%);
+  --accent: hsl(220, 14%, 95%);
+  --accent-foreground: hsl(220, 9%, 15%);
+  --neon-pink: hsl(328, 70%, 45%);
+  --neon-purple: hsl(270, 60%, 40%);
+  --neon-blue: hsl(210, 65%, 40%);
+  --border: hsl(220, 13%, 91%);
+  --input: hsl(220, 13%, 91%);
+  --ring: hsl(220, 8%, 35%);
+  --radius: 0.5rem;
+  --new-gray : hsl(220, 8%, 35%);
+
+}
+
+/* Dark Theme */
 .dark {
   --background: hsl(240, 47%, 10%);
   --foreground: hsl(0, 0%, 95%);
@@ -82,28 +110,41 @@ body {
   --input: #181a26;
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
+  --new-gray : hsl(220, 8%, 67%) ;
 }
 
-/*
-راجع الألوان في الأعلى، لو موافق أكمل باقي المتغيرات والتفاصيل.
-*/
+.text-new-gray {
+  color: var(--new-gray);
+}
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 ;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background! text-foreground!;
+  }
+  h1 ,h2 ,h3   {
+    @apply text-foreground!
+  }
+  #skills .icons {
+       @apply text-foreground!
+}
+
+  header a ,li ,ul  {
+    @apply text-foreground! 
   }
 
   input, textarea, select {
     @apply bg-input text-foreground border border-input rounded-md px-3 py-2;
   }
 
-  button {
-    @apply bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-secondary transition;
+
+  nav .shadcn-button {
+    @apply bg-background! text-foreground! hover:bg-transparent! ;
   }
+  
 }
 
 @layer utilities {
@@ -119,11 +160,11 @@ body {
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-pink-400 to-purple-500 text-transparent bg-clip-text;
+    @apply bg-gradient-to-r from-neon-pink to-neon-purple text-transparent bg-clip-text;
   }
   .text-gradient-2 {
-    @apply bg-gradient-to-r from-pink-500/10 to-purple-700/10  
-          hover:bg-pink-500/20 hover:text-pink-400
+    @apply bg-gradient-to-r from-neon-pink/20 to-neon-purple/20  
+          hover:bg-neon-pink/30 hover:text-neon-pink
   }
   .text-transparent {
     @apply bg-transparent hover:bg-transparent  bg-clip-text;

@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 
 const Header = () => {
   
-  return <Navbar />;
+  return <header><Navbar /></header> ;
 };
 
 export default Header; 

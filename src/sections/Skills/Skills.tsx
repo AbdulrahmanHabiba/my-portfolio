@@ -14,7 +14,10 @@ import {
   SiStripe,
   SiShadcnui,
   SiSanity,
+  SiFirebase
 } from "react-icons/si";
+import { TbMapSearch } from "react-icons/tb";
+
 import { FaRegCircle } from "react-icons/fa";
 import { MdOutlineAccountCircle } from "react-icons/md";
 import { RiShieldKeyholeFill } from "react-icons/ri";
@@ -26,14 +29,20 @@ const skillsRows = [
     { name: "React", icon: <SiReact size={36} className="text-cyan-400" /> },
     {
       name: "Next.js",
-      icon: <SiNextdotjs size={36} className="text-gray-200" />,
+      icon: <SiNextdotjs size={36} className="text-black dark:text-gray-200" />,
     },
+
     { name: "Redux", icon: <SiRedux size={36} className="text-purple-400" /> },
     {
       name: "Context API",
       icon: <FaRegCircle size={36} className="text-green-400" />,
     },
-    { name: "Sanity", icon: <SiSanity size={36} className="text-red-400" /> },
+     { name: "Firebase" ,
+      icon: <SiFirebase size={36} className="text-[#FF9100] dark:text-yellow-400" />
+    } ,
+    
+    { name: "NextAuth", icon: <RiShieldKeyholeFill size={36} className="text-green-400" /> },
+   
 
     {
       name: "TypeScript",
@@ -56,15 +65,22 @@ const skillsRows = [
       name: "PostgreSQL",
       icon: <SiPostgresql size={36} className="text-blue-500" />,
     },
-    {
+     {
       name: "Prisma",
       icon: <SiPrisma size={36} className="text-black dark:text-white" />,
     },
+    { name: "Sanity",
+       icon: <SiSanity size={36} className="text-red-400" />
+    },
+    {
+      name : "Maps" ,
+      icon: <TbMapSearch size={36} className="text-green-400" />
+    } ,
+   
     {
       name: "Clerk",
-      icon: <MdOutlineAccountCircle size={36} className="text-pink-400" />,
-    },
-    { name: "NextAuth", icon: <RiShieldKeyholeFill size={36} className="text-green-400" /> },
+      icon: <MdOutlineAccountCircle size={36} className="text-pink-800 dark:text-pink-400" />,
+    } ,
 
     {
       name: "Stripe",
@@ -100,23 +116,23 @@ const Skills = () => (
         <Title as="h2" underline>
           SKILLS
         </Title>
-        <p className="mt-2 text-center text-gray-400 text-lg">
+        <p className="mt-2 text-center text-new-gray text-lg">
           The skills, tools and technologies I use:
         </p>
       </div>
       {/* Desktop  */}
       <div className="hidden md:flex flex-col items-center gap-6">
         {skillsRows.map((row, i) => (
-          <div key={i} className=" flex md:flex-row  justify-center gap-8 ">
+          <div key={i} className=" flex md:flex-row icons justify-center gap-8 ">
             {row.map((skill: { name: string; icon: React.ReactNode }) => (
               <div
                 key={skill.name}
                 className="flex flex-col items-center group"
               >
-                <div className="rounded-full bg-secondary shadow-lg p-5  transition-transform duration-300 group-hover:scale-110 group-hover:shadow-pink-400/40 group-focus:scale-110 group-focus:shadow-pink-400/40">
+                <div className="rounded-full bg-white dark:bg-secondary backdrop-blur-lg shadow-lg p-5  transition-transform duration-300 group-hover:scale-110 group-hover:shadow-pink-400/40 group-focus:scale-110 group-focus:shadow-pink-400/40">
                   {skill.icon}
                 </div>
-                <span className="mt-2 text-sm  text-gray-300 text-center">
+                <span className="mt-2 text-sm icons text-new-gray text-center">
                   {skill.name}
                 </span>
               </div>
@@ -136,7 +152,7 @@ const Skills = () => (
                 <div className="rounded-full bg-secondary shadow-lg p-4  transition-transform duration-300 group-hover:scale-110 group-hover:shadow-pink-400/40 group-focus:scale-110 group-focus:shadow-pink-400/40">
                   {skill.icon}
                 </div>
-                <span className="mt-2 text-sm  text-gray-300 text-center">
+                <span className="mt-2 text-sm  text-new-gray text-center">
                   {skill.name}
                 </span>
               </div>

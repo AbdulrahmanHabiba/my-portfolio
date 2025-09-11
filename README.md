@@ -1,55 +1,43 @@
-# React + TypeScript + Vite
+# 🌐 My Portfolio Website  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ✨ Overview  
+A **modern and responsive portfolio website** built with **React, TypeScript, and Vite**.  
+This portfolio not only showcases my **skills, projects, and services** as a Frontend Developer specializing in **React & Next.js**, but also includes a powerful **Admin Dashboard** for managing projects with **Firebase Authentication** and **role-based access**.  
 
-Currently, two official plugins are available:
+## 🚀 Features  
+- 📱 **Responsive Design**: Works perfectly across all devices  
+- 🌙 **Dark/Light Mode**: Theme toggle functionality  
+- 🎭 **Interactive Sections**:  
+  - 👋 Hero section with typewriter effect  
+  - 🙋 About Me  
+  - 🛠 Services Offered  
+  - ⚡ Skills Showcase  
+  - 💼 Portfolio/Projects Gallery  
+  - 📩 Contact form with **EmailJS integration**  
+- 🔑 **Admin Dashboard**:  
+  - 🔐 Firebase Authentication with role-based access  
+  - 📝 **CRUD for Projects** (Add, Update, Delete)  
+  - 📂 **Drag & Drop** project reordering using **DnD Kit**  
+  - 📊 Project management with **React Query** for data fetching  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Technologies Used  
+- **Frontend:** ⚛️ React 19, TypeScript  
+- **Build Tool:** ⚡ Vite  
+- **Styling:** 🎨 TailwindCSS 4  
+- **UI Components:** 🧩 ShadCN UI + Radix  
+- **State/Data:** TanStack Query  
+- **Auth & DB:** 🔥 Firebase (Auth + Firestore)  
+- **Animations:** 🎬 Framer Motion  
+- **Routing:** 🧭 React Router v7  
+- **Drag & Drop:** 🎯 DnD Kit  
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
-# my-portfolio
+## 📂 Project Structure  
+/public → Static assets
+/src
+├── assets → Images and other assets
+├── components → Reusable UI components
+├── dashboard → Admin dashboard (Firebase + CRUD + DnD)
+├── lib → Utilities, hooks, configs
+├── pages → Page components
+├── sections → Portfolio sections
+└── types → TypeScript definitions

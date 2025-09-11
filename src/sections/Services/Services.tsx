@@ -15,7 +15,7 @@ export default function Services() {
       title: "Frontend Development",
       description:
         "Responsive and scalable UIs with React, Next.js & Tailwind CSS.",
-      icon: <FaCode className="text-pink-400 w-6 h-6" />,
+      icon: <FaCode className="text-pink-800 dark:text-pink-400 w-6 h-6" />,
     },
     {
       title: "API & CMS Integration",

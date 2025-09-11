@@ -9,7 +9,7 @@ const About = () => (
     className="  text-white space-y-12 relative scroll-mt-28"
   >
     <SectionMotion>
-      <Title as="h2" underline>
+      <Title  as="h2" underline>
         ABOUT ME
       </Title>
       <div className="flex flex-col md:flex-row gap-8">

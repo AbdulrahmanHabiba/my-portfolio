@@ -1,91 +1,64 @@
-import {
-  SiHtml5,
-  SiCss3,
-  SiBootstrap,
-  SiJavascript,
-  SiJquery,
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiStripe,
-  SiClerk,
-  SiPostgresql,
-  SiRapid,
-  SiReactbootstrap,
-  SiAuthelia,
-  SiJsonwebtokens,
-  SiPrisma,
-  SiRedux,
-  SiStrapi,
-  SiTailwindcss,
-  SiShadcnui ,
-  SiSanity 
-} from "react-icons/si";
 
-import { FaReact, FaGithub } from "react-icons/fa";
-import { RiLinksFill ,RiShieldKeyholeFill } from "react-icons/ri";
+import { FaGithub, FaEdit, FaTrash } from "react-icons/fa";
+import { RiLinksFill } from "react-icons/ri";
 import AppButton from "@/components/ui/AppButton";
-import { MdOutgoingMail } from "react-icons/md";
 import Skeleton from "@/components/ui/Skeleton";
-import React, { useState } from "react";
+import  { useState } from "react";
+import {type Project } from "@/lib/utils/projectsService";
+import { Button } from "@/components/ui/button";
+import { techIcons } from "@/lib/icons";
 
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  image: string;
-  tech: string[];
-  link: string;
+interface ProjectCardProps extends Partial<Project> {
+  title?: string
+  description?: string
+  image?: string
+  tech?: string[]
+  link?: string
   code?: string;
+  isAdminPage?: boolean;
+  onEdit?: (project: Project) => void;
+  onDelete?: (id: string) => void;
+  id?: string;
+  dragHandleProps?: React.HTMLAttributes<HTMLDivElement>;
 }
 
-const techIcons: Record<string, React.ElementType> = {
-  HTML: SiHtml5,
-  CSS: SiCss3,
-  Bootstrap: SiBootstrap,
-  JavaScript: SiJavascript,
-  jQuery: SiJquery,
-  "React.js": SiReact,
-  React: SiReact,
-  "Next.js": SiNextdotjs,
-  TypeScript: SiTypescript,
-  Stripe: SiStripe,
-  Clerk: SiClerk,
-  PostgreSQL: SiPostgresql,
-  Context: FaReact,
-  "REST API": SiRapid,
-  "React Bootstrap": SiReactbootstrap,
-  JWT: SiJsonwebtokens,
-  Auth: SiAuthelia,
-  Prisma: SiPrisma,
-  "Redux Toolkit": SiRedux,
-  Strapi: SiStrapi,
-  "React Email": MdOutgoingMail,
-  "ShadCN UI" : SiShadcnui ,
-  "NextAuth" : RiShieldKeyholeFill ,
-  "Sanity" : SiSanity ,
-
-
-
-};
 
 const ProjectCard = ({
+  id,
   title,
   description,
   image,
   tech,
   link,
   code,
+  isAdminPage,
+  onEdit,
+  onDelete,
+  dragHandleProps,
 }: ProjectCardProps) => {
   const [imgLoaded, setImgLoaded] = useState(false);
+  
+  const projectData = {
+    id: id || '',
+    title,
+    description,
+    image,
+    tech,
+    link,
+    code,
+  };
+  
   return (
-    <div className="group relative flex flex-col bg-card border border-[color:var(--secondary)] rounded-3xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-[0_8px_32px_0_var(--neon-pink)] hover:border-[color:var(--neon-pink)]">
+    <div   className="group relative flex flex-col bg-card border border-[color:var(--secondary)] rounded-3xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-[0_8px_32px_0_var(--neon-pink)] hover:border-[color:var(--neon-pink)]">
       {/* Project Image */}
-      <div className="relative overflow-hidden h-48 md:h-40 lg:h-44 w-full">
+      <div {...dragHandleProps} className={`relative overflow-hidden h-48 md:h-40 lg:h-44 w-full ${isAdminPage && "cursor-move"}`}>
+        
         {!imgLoaded && <Skeleton className="absolute inset-0 w-full h-full " />}
         <img
           src={image}
           alt={title}
           loading="lazy"
+         
           className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${
             imgLoaded ? "opacity-100" : "opacity-0"
           }`}
@@ -99,24 +72,47 @@ const ProjectCard = ({
         <h3 className="text-white text-lg font-semibold mb-2 flex items-center gap-2">
           {title}
         </h3>
-        <p className="text-gray-400 text-sm mb-2 line-clamp-2 min-h-[2.5em]">
+        <p className="text-new-gray text-sm mb-2 line-clamp-2 min-h-[2.5em]">
           {description}
         </p>
         <div className="flex flex-wrap gap-1 mt-auto min-h-[3em]">
-          {tech.map((t) => {
+          {tech?.map((t) => {
             const Icon = techIcons[t] || null;
             return (
               <span
                 key={t}
-                className="flex items-center gap-1 text-xs px-2 py-0.5 max-h-[2em] rounded-full bg-primary/30 border border-[color:var(--secondary)] text-gray-200 font-medium shadow-sm backdrop-blur-sm"
+                className="flex items-center gap-1 text-xs px-2 py-0.5 max-h-[2em] rounded-full bg-secondary/30 dark:bg-primary/30  text-primary border border-[color:var(--secondary)] dark:text-gray-200 font-medium shadow-sm backdrop-blur-sm"
               >
                 {Icon && <Icon className="text-base opacity-80" />} {t}
               </span>
             );
           })}
         </div>
+        
+        {isAdminPage && id && (
+          <div className="flex  gap-2 mt-2 mb-2 absolute top-1 right-2">
+            <Button
+              variant="secondary"
+              size="sm"
+              className="rounded-full bg-green-500 text-white "
+              onClick={() => onEdit && onEdit(projectData as Project)}
+            >
+              <FaEdit size={16} />
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="rounded-full   bg-red-700 text-white"
+              onClick={() => onDelete && onDelete(id)}
+            >
+            <FaTrash size={16} />
+            </Button>
+          
+          </div>
+        )}
+        
         {/* Action Buttons */}
-        <div className="flex gap-3 mt-4">
+        <div className="flex gap-3 mt-2">
           <a
             href={link}
             target="_blank"

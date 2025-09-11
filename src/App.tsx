@@ -1,15 +1,14 @@
-import Hero from "@/sections/Hero/Hero";
 import Header from "@/sections/Header/Header";
-import Services from "@/sections/Services/Services";
-import Skills from "@/sections/Skills/Skills";
-import Portfolio from "@/sections/Portfolio/Portfolio";
-import Contact from "@/sections/Contact/Contact";
 import Footer from "@/components/layout/Footer";
-import Container from "./components/layout/Container";
-import About from "@/sections/About/About";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "react-hot-toast";
 import ScrollToTopButton from "@/components/ui/ScrollToTopButton";
+import { Routes, Route } from "react-router-dom";
+import Admin from "@/pages/Admin";
+import Home from "@/pages/Home";
+import { UserProvider } from '@/lib/context/UserContext';
+
+
 
 function App() {
   return (
@@ -18,19 +17,17 @@ function App() {
         position="top-center"
         toastOptions={{ style: { fontSize: "1rem", borderRadius: "8px" } }}
       />
-      <ThemeProvider>
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <UserProvider>
         <Header />
         <main>
-          <Container>
-            <Hero />
-            <About />
-            <Services />
-            <Skills />
-            <Portfolio />
-            <Contact />
-          </Container>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/admin" element={<Admin />} />
+          </Routes>
         </main>
         <Footer />
+        </UserProvider>
         <ScrollToTopButton />
       </ThemeProvider>
     </>

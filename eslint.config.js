@@ -3,6 +3,7 @@ import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
+import path from 'path'
 
 export default tseslint.config(
   { ignores: ['dist'] },
@@ -12,6 +13,14 @@ export default tseslint.config(
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+      parserOptions: {
+        project: [
+          './tsconfig.json',
+          './tsconfig.app.json',
+          './tsconfig.node.json',
+        ],
+        tsconfigRootDir: path.resolve(), // 🟢 ده المهم
+      },
     },
     plugins: {
       'react-hooks': reactHooks,

@@ -17,7 +17,7 @@ export default function ServiceCard({ title, description, icon }: Props) {
     {/* Text content */}
     <div>
       <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">{title}</h3>
-      <p className="text-gray-400 text-sm sm:text-base leading-relaxed">{description}</p>
+      <p className="text-new-gray text-sm sm:text-base leading-relaxed">{description}</p>
     </div>
   </div>
   );

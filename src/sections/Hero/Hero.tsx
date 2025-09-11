@@ -24,7 +24,7 @@ export default function Hero() {
                 <Cursor cursorStyle="|" />
               </span>
             </Title>
-            <p className="text-gray-400 text-lg">
+            <p className="text-new-gray text-lg">
               I'm Abdulrahman – a frontend developer building responsive web
               apps using{" "}
               <span className="text-blue-400 font-semibold">React</span> &{" "}
