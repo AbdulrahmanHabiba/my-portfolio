@@ -94,13 +94,12 @@ const ProjectCard = ({
         {isAdminPage && id && (
          <div className="flex gap-2 mt-2 mb-2 absolute top-1 right-2">
   {/* Drag */}
-  <Button
+  <div
     {...dragHandleProps}
-    size="icon"
-    className="rounded-full bg-secondary text-new-gray transition-colors cursor-pointer"
+    className="rounded-full bg-secondary text-new-gray transition-colors cursor-pointer flex items-center justify-center p-2"
   >
     <AiOutlineDrag className="w-5 h-5 " />
-  </Button>
+  </div>
 
   {/* Edit */}
   <Button
