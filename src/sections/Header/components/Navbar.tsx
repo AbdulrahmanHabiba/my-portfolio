@@ -59,13 +59,13 @@ const Navbar = () => {
     <nav className="fixed top-2 left-0 w-full z-50 ">
       <Container>
         <div
-          className={`bg-secondary/10 backdrop-blur-lg border border-secondary shadow-2xl rounded-3xl px-3 py-2 md:px-6 md:py-4 flex flex-col md:flex-row items-start md:items-center justify-between transition-all duration-300 ease-in-out overflow-hidden ring-1 ring-primary/10 ${isOpen
+          className={`bg-white dark:bg-secondary/10 dark:backdrop-blur-lg border border-secondary shadow-2xl rounded-3xl px-3 py-2 md:px-6 md:py-4 flex flex-col md:flex-row items-start md:items-center justify-between transition-all duration-300 ease-in-out overflow-hidden ring-1 ring-primary/10 ${isOpen
               ? "max-h-[400px] scale-100"
               : "max-h-[56px] md:max-h-[70px] scale-95"
             }`}
         >
           <div className="w-full flex items-center justify-between">
-            <div className="text-xs  md:text-sm xl:text-base w-auto  xs:max-w-[70px] sm:w-auto tracking-widest text-foreground font-black uppercase cursor-pointer">
+            <div className="text-xs  md:text-sm xl:text-base w-auto  xs:max-w-[100px] sm:w-auto tracking-widest text-foreground font-black uppercase cursor-pointer flex items-center">
               <Link to="/">Abdulrahman Habiba</Link>
             </div>
             <div className="hidden md:flex mt-4 md:mt-0 mx-2">
