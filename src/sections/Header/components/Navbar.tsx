@@ -65,13 +65,14 @@ const Navbar = () => {
             }`}
         >
           <div className="w-full flex items-center justify-between">
-            <div className="text-sm md:text-base tracking-widest text-foreground font-black uppercase cursor-pointer">
+            <div className="text-xs  md:text-sm xl:text-base w-auto  xs:max-w-[70px] sm:w-auto tracking-widest text-foreground font-black uppercase cursor-pointer">
               <Link to="/">Abdulrahman Habiba</Link>
             </div>
-            <div className="hidden md:flex mt-4 md:mt-0">
+            <div className="hidden md:flex mt-4 md:mt-0 mx-2">
               <NavLinks className="flex space-x-6" />
             </div>
-            <div className="hidden md:flex items-center space-x-4">
+            <div className="flex gap-4">
+            <div className="hidden lg:flex  items-center">
               <LanguageSwitcher />
             </div>
             <div className=" flex items-center  gap-4">
@@ -101,6 +102,7 @@ const Navbar = () => {
                 )}
               </button>
             </div>
+          </div>
           </div>
           <div
             className={`w-full md:hidden flex flex-col items-center gap-1 transition-all duration-300 ${isOpen

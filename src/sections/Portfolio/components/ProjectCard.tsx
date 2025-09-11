@@ -1,5 +1,7 @@
 
 import { FaGithub, FaEdit, FaTrash } from "react-icons/fa";
+import { AiOutlineDrag } from "react-icons/ai";
+
 import { RiLinksFill } from "react-icons/ri";
 import AppButton from "@/components/ui/AppButton";
 import Skeleton from "@/components/ui/Skeleton";
@@ -90,25 +92,35 @@ const ProjectCard = ({
         </div>
         
         {isAdminPage && id && (
-          <div className="flex  gap-2 mt-2 mb-2 absolute top-1 right-2">
-            <Button
-              variant="secondary"
-              size="sm"
-              className="rounded-full bg-green-500 text-white "
-              onClick={() => onEdit && onEdit(projectData as Project)}
-            >
-              <FaEdit size={16} />
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="rounded-full   bg-red-700 text-white"
-              onClick={() => onDelete && onDelete(id)}
-            >
-            <FaTrash size={16} />
-            </Button>
-          
-          </div>
+         <div className="flex gap-2 mt-2 mb-2 absolute top-1 right-2">
+  {/* Drag */}
+  <Button
+    {...dragHandleProps}
+    size="icon"
+    className="rounded-full bg-secondary text-new-gray transition-colors cursor-pointer"
+  >
+    <AiOutlineDrag className="w-5 h-5 " />
+  </Button>
+
+  {/* Edit */}
+  <Button
+    size="icon"
+    className="rounded-full bg-green-500 hover:bg-green-600 text-white transition-colors cursor-pointer"
+    onClick={() => onEdit && onEdit(projectData as Project)}
+  >
+    <FaEdit size={16} />
+  </Button>
+
+  {/* Delete */}
+  <Button
+    size="icon"
+    className="rounded-full bg-red-600 hover:bg-red-700 text-white transition-colors cursor-pointer"
+    onClick={() => onDelete && onDelete(id)}
+  >
+    <FaTrash size={16} />
+  </Button>
+</div>
+
         )}
         
         {/* Action Buttons */}
