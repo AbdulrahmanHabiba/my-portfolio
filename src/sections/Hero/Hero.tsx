@@ -36,12 +36,12 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <AppButton variant="primary">
+                <AppButton variant="primary"  className="text-[12px]  sm:text-base">
                   Download CV <FaDownload className="inline ml-2" />
                 </AppButton>
               </a>
               <a href="#contact">
-                <AppButton variant="outline">
+                <AppButton variant="outline" className="text-[12px]  sm:text-base">
                   Contact Me <FaPaperPlane className="inline ml-2" />
                 </AppButton>
               </a>
