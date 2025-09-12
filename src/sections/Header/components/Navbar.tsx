@@ -57,7 +57,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-2 left-0 w-full z-50 ">
-      <Container>
+      <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8  ">
         <div
           className={`bg-white/50 dark:bg-secondary/10  backdrop-blur-lg border border-secondary shadow-2xl rounded-3xl px-3 py-2 md:px-6 md:py-4 flex flex-col md:flex-row items-start md:items-center justify-between transition-all duration-300 ease-in-out overflow-hidden ring-1 ring-primary/10 
             ${isOpen
@@ -117,7 +117,7 @@ const Navbar = () => {
             />
           </div>
         </div>
-      </Container>
+      </div>
     </nav>
   );
 };
