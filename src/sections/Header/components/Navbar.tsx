@@ -1,6 +1,5 @@
 "use client"
 import { useState } from "react";
-import Container from "@/components/layout/Container";
 import ModeToggle from "@/components/mode-toggle";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { IoClose } from "react-icons/io5";
