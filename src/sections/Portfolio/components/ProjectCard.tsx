@@ -49,11 +49,15 @@ const ProjectCard = ({
     link,
     code,
   };
-  
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
   return (
     <div   className="group relative flex flex-col bg-card border border-[color:var(--secondary)] rounded-3xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-[0_8px_32px_0_var(--neon-pink)] hover:border-[color:var(--neon-pink)]">
       {/* Project Image */}
-      <div {...dragHandleProps} className={`relative overflow-hidden h-48 md:h-40 lg:h-44 w-full ${isAdminPage && "cursor-move"}`}>
+      <div 
+        {...(!isMobile ? dragHandleProps : {})} 
+        className={`relative overflow-hidden h-48 md:h-40 lg:h-44 w-full ${isAdminPage && !isMobile && "cursor-move"}`}
+      >
         
         {!imgLoaded && <Skeleton className="absolute inset-0 w-full h-full " />}
         <img
