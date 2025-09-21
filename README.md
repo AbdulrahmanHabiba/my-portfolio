@@ -31,16 +31,17 @@ This portfolio not only showcases my **skills, projects, and services** as a Fro
 - **Routing:** 🧭 React Router v7  
 - **Drag & Drop:** 🎯 DnD Kit  
 
-## 📂 Project Structure  
-/public → Static assets
-/src
-├── assets → Images and other assets
-├── components → Reusable UI components
-├── dashboard → Admin dashboard (Firebase + CRUD + DnD)
-├── lib → Utilities, hooks, configs
-├── pages → Page components
-├── sections → Portfolio sections
-└── types → TypeScript definitions
+## 📂 Project Structure
+```rm
+/public        → Static assets  
+/src  
+ ├── assets     → Images and other assets  
+ ├── components → Reusable UI components  
+ ├── dashboard  → Admin dashboard (Firebase + CRUD + DnD)  
+ ├── lib        → Utilities, hooks, configs  
+ ├── pages      → Page components  
+ ├── sections   → Portfolio sections  
+ └── types      → TypeScript definitions  
 
 ## 📦 Getting Started
 
