@@ -49,12 +49,12 @@ function ContactForm() {
       className="flex-1 bg-card border border-secondary rounded-2xl shadow-lg p-8 flex flex-col gap-5  w-full mx-auto animate-fadeIn"
       style={{ overflow: "visible" }}
     >
-      <label className="text-new-gray text-sm font-medium">
+      <label className="dark:text-new-gray text-sm font-medium">
         Name
         <input
           name="name"
           type="text"
-          className="mt-1 w-full bg-secondary/10 border border-input rounded-md px-3 py-2 text-white placeholder:text-new-gray focus:outline-none focus:ring-2 focus:ring-pink-400/50 transition"
+          className="mt-1 w-full bg-secondary/10 border border-input rounded-md px-3 py-2 dark:text-white dark:placeholder:text-new-gray focus:outline-none focus:ring-2 focus:ring-pink-400/50 transition"
           placeholder="Your Name"
           required
         />
@@ -69,7 +69,7 @@ function ContactForm() {
         <input
           name="email"
           type="email"
-          className="mt-1 w-full bg-secondary/10 border border-input rounded-md px-3 py-2 text-white placeholder:text-new-gray focus:outline-none focus:ring-2 focus:ring-pink-400/50 transition"
+          className="mt-1 w-full bg-secondary/10 border border-input rounded-md px-3 py-2 dark:text-white dark:placeholder:text-new-gray focus:outline-none focus:ring-2 focus:ring-pink-400/50 transition"
           placeholder="you@email.com"
           required
         />
@@ -83,7 +83,7 @@ function ContactForm() {
         Message
         <textarea
           name="message"
-          className="mt-1 w-full bg-secondary/10 border border-input rounded-md px-3 py-2 text-white placeholder:text-new-gray focus:outline-none focus:ring-2 focus:ring-pink-400/50 transition min-h-[100px]"
+          className="mt-1 w-full bg-secondary/10 border border-input rounded-md px-3 py-2 dark:text-white dark:placeholder:text-new-gray focus:outline-none focus:ring-2 focus:ring-pink-400/50 transition min-h-[100px]"
           placeholder="Your message..."
           required
         />

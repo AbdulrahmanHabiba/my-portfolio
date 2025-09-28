@@ -85,7 +85,7 @@ const Navbar = () => {
                     <AvatarFallback className="bg-secondary">{user.displayName?.charAt(0) || "U"}</AvatarFallback>
                   </Avatar>
                 </div>
-              ) : <Button variant="outline" size="icon" className="rounded-full">
+              ) : <Button variant="outline" size="icon" className="rounded-full ">
                   <RiAdminLine className="h-5 w-5" />
                 </Button> }
 </Link>
