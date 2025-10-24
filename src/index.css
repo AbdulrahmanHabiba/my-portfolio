@@ -88,6 +88,8 @@ body {
   --ring: hsl(220, 8%, 35%);
   --radius: 0.5rem;
   --new-gray : hsl(220, 8%, 35%);
+  --neon-card: hsl(270, 80%, 60%);
+  --new-color:  hsl(240, 47%, 10%);
 
 }
 
@@ -111,6 +113,8 @@ body {
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --new-gray : hsl(220, 8%, 67%) ;
+  --neon-card:hsl(210, 80%, 60%);
+  --new-color:  oklch(87.9% 0.169 91.605) ;
 }
 
 .text-new-gray {

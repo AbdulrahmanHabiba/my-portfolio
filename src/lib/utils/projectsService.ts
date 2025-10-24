@@ -9,7 +9,8 @@ export interface Project  {
     image: string;
     link: string;
     code : string ;
-    featured: boolean
+    featured: boolean;
+    inProgress?: boolean;
     order? : number
 }
 

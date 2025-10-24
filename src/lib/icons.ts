@@ -20,12 +20,19 @@ import {
   SiTailwindcss,
   SiShadcnui,
   SiSanity, 
-  SiGooglemaps
+  SiGooglemaps,
+  SiGooglemeet,
+  SiStreamlit
 } from "react-icons/si";
+import { HiMiniDevicePhoneMobile } from "react-icons/hi2";
+import { FaShop } from "react-icons/fa6";
+import { IoIosChatbubbles } from "react-icons/io";
+import { ImBlog } from "react-icons/im";
 
 import { FaReact } from "react-icons/fa";
 import { RiFirebaseFill, RiShieldKeyholeFill } from "react-icons/ri";
-import { MdOutgoingMail, MdOutlineDashboardCustomize ,MdDarkMode } from "react-icons/md";
+import { MdOutgoingMail, MdOutlineDashboardCustomize ,MdDarkMode, MdOutlinePlaylistAddCircle } from "react-icons/md";
+import { IoLanguageOutline } from "react-icons/io5";
 
 export const techIcons: Record<string, React.ElementType> = {
   HTML: SiHtml5,
@@ -56,7 +63,16 @@ export const techIcons: Record<string, React.ElementType> = {
   "Firebase" : RiFirebaseFill ,
   "Google Maps" : SiGooglemaps ,
   "Admin Dashboard" : MdOutlineDashboardCustomize ,
-  "Light/Dark" : MdDarkMode
+  "Light/Dark" : MdDarkMode ,
+  "Multi Languages" : IoLanguageOutline ,
+  "CRUD Operations" : MdOutlinePlaylistAddCircle ,
+  "Responsive Disign" :HiMiniDevicePhoneMobile  ,
+  "E-Commerce" : FaShop  ,
+  "Social Media" :IoIosChatbubbles ,
+  "Meetings" : SiGooglemeet ,
+  "Blog" :ImBlog ,
+  "Contact Form" : MdOutgoingMail ,
+  "stream.io" :SiStreamlit 
 };
 
-export const iconNamesFromTechIcons =  Object.keys(techIcons)
+export const iconNamesFromTechIcons =  Object.keys(techIcons) 

@@ -9,7 +9,7 @@ import type { Project } from './projectmodal';
 import { iconNamesFromTechIcons } from '@/lib/icons';
 
 const technologies = iconNamesFromTechIcons
-export default function Technologis({ formData, setFormData ,isLoading } : {formData :Project , setFormData :Dispatch<SetStateAction<{ title: string; description: string; image: string; tech: string[]; link: string; code: string; featured: boolean; order : number }>>,isLoading :boolean }) {
+export default function Technologis({ formData, setFormData ,isLoading } : {formData :Project , setFormData :Dispatch<SetStateAction<{ title: string; description: string; image: string; tech: string[]; link: string; code: string; featured: boolean; inProgress: boolean; order : number }>>,isLoading :boolean }) {
   const [showTechDropdown, setShowTechDropdown] = useState(false);
   const [searchedTechs, setSearchedTechs] = useState<string[]>([]);
   const [techInput, setTechInput] = useState("");
@@ -25,15 +25,19 @@ export default function Technologis({ formData, setFormData ,isLoading } : {form
     setSearchedTechs(filteredTechs);
   };
 
-  const handleAddTech = (tech: string | undefined) => {
-    if (!tech || !tech.trim()) return;
-    setFormData((prev) => ({
-      ...prev,
-      tech: [...prev.tech, ...(!prev.tech.includes(tech) ? [tech] : [])],
-    }));
-    setTechInput("");
-    setSearchedTechs([]);
-  };
+const handleAddTech = (tech: string | undefined) => {
+  if (!tech || !tech.trim()) return;
+  const formattedTech = tech.trim();
+
+  setFormData((prev) => ({
+    ...prev,
+    tech: [...prev.tech, ...(!prev.tech.includes(formattedTech) ? [formattedTech] : [])],
+  }));
+
+  setTechInput("");
+  setSearchedTechs([]);
+};
+
 
 
 const handleRemoveTech = (techToRemove: string) => {
@@ -46,27 +50,36 @@ return (
   <div>
     <Label className="mb-2">Technologies</Label>
     <div className="gap-2 mb-3 relative">
-      <Input
-        value={techInput}
-        onChange={(e) => {
-          const val = e.target.value;
-          setTechInput(val);
-          searchTech(val);
-        }}
-        onFocus={() => {
-          setShowTechDropdown(true);
-          if (!techInput.trim()) {
-            searchTech("");
-          }
-        }}
-        onBlur={() => {
-          setTimeout(() => setShowTechDropdown(false), 200);
-        }}
+     <Input
+  value={techInput}
+  onChange={(e) => {
+    const val = e.target.value;
+    setTechInput(val);
+    searchTech(val);
+  }}
+  onKeyDown={(e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
 
-        placeholder="Add technology (React, TypeScript...)"
-        disabled={isLoading}
-        className="bg-background border-input"
-      />
+      if (techInput.trim() && !formData.tech.includes(techInput.trim())) {
+        handleAddTech(techInput.trim());
+      }
+    }
+  }}
+  onFocus={() => {
+    setShowTechDropdown(true);
+    if (!techInput.trim()) {
+      searchTech("");
+    }
+  }}
+  onBlur={() => {
+    setTimeout(() => setShowTechDropdown(false), 200);
+  }}
+  placeholder="Add technology (React, TypeScript...)"
+  disabled={isLoading}
+  className="bg-background border-input"
+/>
+
 
       {showTechDropdown &&
         (techInput.trim() || searchedTechs.length > 0) && (

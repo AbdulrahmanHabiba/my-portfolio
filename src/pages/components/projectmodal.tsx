@@ -26,6 +26,7 @@ export interface Project {
   link: string;
   code: string;
   featured: boolean;
+  inProgress?: boolean;
   order? :number
 }
 
@@ -51,6 +52,7 @@ export default function ProjectModal({
     link: "",
     code: "",
     featured: false,
+    inProgress: false,
     order : 0
   });
 
@@ -115,6 +117,7 @@ export default function ProjectModal({
         link: project.link || "",
         code: project.code || "",
         featured: project.featured || false,
+        inProgress: project.inProgress || false,
         order : project.order || 0
       });
     } else {
@@ -126,6 +129,7 @@ export default function ProjectModal({
         link: "",
         code: "",
         featured: false,
+        inProgress: false,
         order : 0
       });
 
@@ -198,7 +202,6 @@ export default function ProjectModal({
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, image: e.target.value }))
               }
-              required
               disabled={isLoading}
               className="bg-background border-input"
               placeholder="https://example.com/image.jpg"
@@ -220,7 +223,6 @@ export default function ProjectModal({
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, link: e.target.value }))
               }
-              required
               disabled={isLoading}
               className="bg-background border-input"
               placeholder="https://example.com"
@@ -238,7 +240,6 @@ export default function ProjectModal({
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, code: e.target.value }))
               }
-              required
               disabled={isLoading}
               className="bg-background border-input"
               placeholder="https://github.com/username/repo"
@@ -259,6 +260,23 @@ export default function ProjectModal({
             />
             <Label className="mb-2" htmlFor="featured">
               Featured Project
+            </Label>
+          </div>
+
+          {/* In Progress */}
+          <div className="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              id="inProgress"
+              checked={formData.inProgress}
+              onChange={(e) =>
+                setFormData((prev) => ({ ...prev, inProgress: e.target.checked }))
+              }
+              disabled={isLoading}
+              className="rounded border-input"
+            />
+            <Label className="mb-2" htmlFor="inProgress">
+              In Progress
             </Label>
           </div>
 
