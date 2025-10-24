@@ -174,7 +174,7 @@ const ProjectCard = ({
                   variant="outline"
                   size="sm"
                   disabled
-                  className="flex-1 opacity-70 cursor-not-allowed"
+                  className="flex-1 opacity-70 cursor-not-allowed !px-1"
                 >
                   <p className="text-black dark:text-amber-300">
                     Under development 😞
@@ -203,7 +203,7 @@ const ProjectCard = ({
                   variant="outline"
                   size="sm"
                   disabled
-                  className="flex-1 opacity-70 cursor-not-allowed"
+                  className="flex-1 opacity-70 cursor-not-allowed !px-1"
                 >
                   <p className="text-black dark:text-amber-300">
                     Soon available ⏳
