@@ -56,13 +56,12 @@ const ProjectCard = ({
   const hasCodeLink = Boolean(code);
 
   return (
-    <div className="group relative flex flex-col bg-card border border-[color:var(--secondary)] rounded-3xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-[0_8px_32px_0_var(--neon-card)] hover:border-[color:var(--neon-card)]">
+    <div className="group relative flex flex-col bg-card/80 dark:bg-card/60 border-2 border-border/60 dark:border-border/40 rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:border-neon-purple/50 hover:shadow-2xl backdrop-blur-md">
       {/* Project Image */}
       <div
         {...(!isMobile ? dragHandleProps : {})}
-        className={`relative overflow-hidden h-48 md:h-40 lg:h-44 w-full ${
-          isAdminPage && !isMobile && "cursor-move"
-        }`}
+        className={`relative overflow-hidden h-48 md:h-40 lg:h-44 w-full ${isAdminPage && !isMobile && "cursor-move"
+          }`}
       >
         {inProgress && (
           <div className="absolute top-2 left-2 z-10 bg-amber-500 text-black text-xs font-bold px-2 py-1 rounded-full shadow-md">
@@ -75,32 +74,31 @@ const ProjectCard = ({
           src={displayImage}
           alt={title}
           loading="lazy"
-          className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${
-            imgLoaded ? "opacity-100" : "opacity-0"
-          }`}
+          className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${imgLoaded ? "opacity-100" : "opacity-0"
+            }`}
           onLoad={() => setImgLoaded(true)}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
       </div>
 
       {/* Card Content */}
-      <div className="flex flex-col flex-1 p-5 gap-2">
-        <h3 className="text-white text-lg font-semibold mb-2 flex items-center gap-2">
+      <div className="flex flex-col flex-1 p-4 gap-2 bg-gradient-to-b from-card/50 dark:from-card/40 to-card dark:to-card/80">
+        <h3 className="text-foreground text-xl font-bold mb-1 line-clamp-1">
           {title}
         </h3>
-        <p className="text-new-gray text-sm mb-2 line-clamp-2 min-h-[2.5em]">
+        <p className="text-muted-foreground text-xs leading-relaxed mb-1 line-clamp-3 min-h-[3.6em]">
           {description}
         </p>
 
-        <div className="flex flex-wrap gap-1 mt-auto min-h-[3em]">
+        <div className="flex flex-wrap gap-2 mt-auto min-h-[3.5em]">
           {tech?.map((t) => {
             const Icon = techIcons[t] || null;
             return (
               <span
                 key={t}
-                className="flex items-center gap-1 text-xs px-2 py-0.5 max-h-[2em] rounded-full bg-secondary/30 dark:bg-primary/30 text-primary border border-[color:var(--secondary)] dark:text-gray-200 font-medium shadow-sm backdrop-blur-sm"
+                className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-primary/5 dark:bg-primary/10 text-foreground border border-primary/20 dark:border-primary/30 font-medium hover:bg-primary/10 dark:hover:bg-primary/20 transition-all max-h-8"
               >
-                {Icon && <Icon className="text-base opacity-80" />} {t}
+                {Icon && <Icon className="text-sm opacity-70" />} {t}
               </span>
             );
           })}
@@ -108,28 +106,28 @@ const ProjectCard = ({
 
         {/* Admin Buttons */}
         {isAdminPage && id && (
-          <div className="flex gap-2 mt-2 mb-2 absolute top-1 right-2">
+          <div className="flex gap-2 mt-2 mb-2 absolute top-2 right-2 z-20">
             {/* Drag */}
             <div
               {...dragHandleProps}
-              className="rounded-full bg-secondary text-new-gray transition-colors cursor-pointer flex items-center justify-center p-2 hover:bg-muted"
+              className="rounded-lg bg-muted/90 dark:bg-muted/70 text-foreground hover:bg-muted border border-border/50 transition-all cursor-grab active:cursor-grabbing flex items-center justify-center p-2 shadow-md hover:shadow-lg"
             >
-              <AiOutlineDrag className="w-5 h-5" />
+              <AiOutlineDrag className="w-4 h-4" />
             </div>
 
             {/* Edit */}
             <Button
               size="icon"
-              className="rounded-full bg-green-500 hover:bg-green-600 text-white transition-colors cursor-pointer"
+              className="rounded-lg bg-blue-500/90 dark:bg-blue-600/90 hover:bg-blue-600 dark:hover:bg-blue-700 text-white transition-all shadow-md hover:shadow-lg border-none"
               onClick={() => onEdit && onEdit(projectData as Project)}
             >
-              <FaEdit size={16} />
+              <FaEdit size={17} />
             </Button>
 
             {/* Delete */}
             <Button
               size="icon"
-              className="rounded-full bg-red-600 hover:bg-red-700 text-white transition-colors cursor-pointer"
+              className="rounded-lg bg-red-500/90 dark:bg-red-600/90 hover:bg-red-600 dark:hover:bg-red-700 text-white transition-all shadow-md hover:shadow-lg border-none"
               onClick={() => onDelete && onDelete(id)}
             >
               <FaTrash size={16} />

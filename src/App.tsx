@@ -8,8 +8,7 @@ import Admin from "@/pages/Admin";
 import Home from "@/pages/Home";
 import { UserProvider } from '@/lib/context/UserContext';
 import NotFound from "./pages/NotFound";
-
-
+import InteractiveBackground from "@/components/visual/InteractiveBackground";
 
 function App() {
   return (
@@ -18,19 +17,20 @@ function App() {
         position="top-center"
         toastOptions={{ style: { fontSize: "1rem", borderRadius: "8px" } }}
       />
-      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <ThemeProvider>
         <UserProvider>
-        <Header />
-        <main>
-          <Routes>
-            <Route path="*" element={<NotFound />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/admin" element={<Admin />} />
-          </Routes>
-        </main>
-        <Footer />
+          <InteractiveBackground />
+          <Header />
+          <main>
+            <Routes>
+              <Route path="*" element={<NotFound />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/admin" element={<Admin />} />
+            </Routes>
+          </main>
+          <Footer />
+          <ScrollToTopButton />
         </UserProvider>
-        <ScrollToTopButton />
       </ThemeProvider>
     </>
   );

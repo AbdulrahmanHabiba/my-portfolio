@@ -19,11 +19,11 @@ const AppButton = ({
 
   const variants = {
     primary:
-      'bg-gradient-to-r from-pink-400 to-neon-purple text-white hover:opacity-90',
+      'bg-neon-gradient text-white hover:opacity-90',
     secondary:
-      'bg-secondary text-white hover:bg-secondary/80',
+      'bg-secondary text-secondary-foreground hover:bg-secondary/80',
     outline:
-      'border border-neon-pink text-neon-pink hover:bg-black hover:text-white hover:border-black dark:text-white dark:hover:bg-white/10 dark:bg-transparent dark:border-neon-purple dark:hover:text-white bg-transparent',
+      'border border-neon-purple text-foreground hover:bg-neon-purple/10',
   };
 
   const sizes = {
@@ -42,4 +42,4 @@ const AppButton = ({
   );
 };
 
-export default AppButton;
+export default AppButton; 

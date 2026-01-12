@@ -1,31 +1,26 @@
 import Title from "@/components/ui/Title";
-import ProjectCard from "./components/ProjectCard";
+import ProjectCard from "./ProjectCard";
 import SectionMotion from "@/components/ui/SectionMotion";
 import { useProjects } from "@/lib/hooks/useProjects";
 import SkeletonCard from "@/components/ui/SkeletonCard";
-import { fallbackProjects } from "@/lib/utils/ProjectsData";
-import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { SquareChevronRight } from "lucide-react";
-
-
+import { Button } from "@/components/ui/button";
 
 const Portfolio = () => {
   const { data: projects, isLoading, error } = useProjects();
+  const [visibleCount, setVisibleCount] = useState(9);
 
-  if (error) {
-    console.error("Error loading projects:", error);
-  }
-  const projectsLength = projects?.length || 20;
-  const [size, setSize] = useState(projectsLength);
-  const btnText = size <= 9 ? "Show All Projects" : "Show Only 9 projects";
-  const handleShowMore = () => {
-    setSize(size <= 9 ? projectsLength : 9);
+  const visibleProjects = projects?.slice(0, visibleCount) || [];
+  const hasMore = projects && visibleCount < projects.length;
+
+  const loadMore = () => {
+    setVisibleCount(prev => Math.min(prev + 6, projects?.length || 0));
   };
+
   return (
     <section
       id="portfolio"
-      className="section-gap bg-background relative scroll-mt-24"
+      className="section-gap relative scroll-mt-24"
     >
       <SectionMotion>
         <div className="mb-10">
@@ -33,35 +28,44 @@ const Portfolio = () => {
             Portfolio
           </Title>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 xl:gap-14 place-items-center mb-8">
-          {isLoading ? (
-            [1, 2, 3, 4, 5, 6].map((i) => <SkeletonCard key={i} />)
-          ) : error || !projects || projects.length === 0 ? (
-            fallbackProjects.map((project) => (
-              <ProjectCard key={project.id} {...project} />
-            ))
-          ) : (
-            projects.slice(0, size).map((project) => (
-              <ProjectCard key={project.id} {...project} />
-            ))
-          )}
-        </div> 
-        {projects && projects?.length > 0 && (
-        <div className="flex justify-center pt-3">
-        
-          <Button 
-           className="p-5 px-6 border border-[color:var(--secondary)] rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-[0_8px_32px_0_var(--neon-card)] hover:border-[color:var(--neon-card)] hover:dark:text-gray-500"
-          variant="outline"
-          onClick={handleShowMore}
-        >
-          <p>{btnText } </p><SquareChevronRight />
-        </Button>
-        </div>
+
+        {isLoading ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 xl:gap-14 place-items-center mb-8">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <SkeletonCard key={i} />
+            ))}
+          </div>
+        ) : error ? (
+          <div className="text-center py-12">
+            <p className="text-red-500 mb-4">Error loading projects. Please try again.</p>
+          </div>
+        ) : projects && projects.length > 0 ? (
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 xl:gap-14 place-items-center mb-8">
+              {visibleProjects.map((project) => (
+                <ProjectCard key={project.id} {...project} />
+              ))}
+            </div>
+            {hasMore && (
+              <div className="flex justify-center mt-8">
+                <Button
+                  onClick={loadMore}
+                  variant="outline"
+                  className="px-8 py-6 text-base font-semibold border-2 border-neon-purple hover:bg-neon-purple/10 hover:border-neon-pink transition-all"
+                >
+                  Load More Projects
+                </Button>
+              </div>
+            )}
+          </>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground">No projects available yet.</p>
+          </div>
         )}
       </SectionMotion>
     </section>
   );
 };
-
 
 export default Portfolio;

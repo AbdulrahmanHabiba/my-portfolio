@@ -22,7 +22,10 @@ import {
   SiSanity, 
   SiGooglemaps,
   SiGooglemeet,
-  SiStreamlit
+  SiStreamlit,
+  SiExpo,
+  SiAppwrite,
+  SiLeaflet
 } from "react-icons/si";
 import { HiMiniDevicePhoneMobile } from "react-icons/hi2";
 import { FaShop } from "react-icons/fa6";
@@ -30,7 +33,7 @@ import { IoIosChatbubbles } from "react-icons/io";
 import { ImBlog } from "react-icons/im";
 
 import { FaReact } from "react-icons/fa";
-import { RiFirebaseFill, RiShieldKeyholeFill } from "react-icons/ri";
+import { RiFirebaseFill, RiLinksFill, RiShieldKeyholeFill } from "react-icons/ri";
 import { MdOutgoingMail, MdOutlineDashboardCustomize ,MdDarkMode, MdOutlinePlaylistAddCircle } from "react-icons/md";
 import { IoLanguageOutline } from "react-icons/io5";
 
@@ -72,7 +75,14 @@ export const techIcons: Record<string, React.ElementType> = {
   "Meetings" : SiGooglemeet ,
   "Blog" :ImBlog ,
   "Contact Form" : MdOutgoingMail ,
-  "stream.io" :SiStreamlit 
+  "stream.io" :SiStreamlit,
+    "React Native": SiReact,
+    "Expo": SiExpo,
+    "Appwrite": SiAppwrite,
+    "React-Leaflet": SiLeaflet,
+    "Google APIs": SiGooglemaps,
+    "NativeWind": SiTailwindcss,
+    "UploadThing": RiLinksFill, 
 };
 
 export const iconNamesFromTechIcons =  Object.keys(techIcons) 

@@ -7,19 +7,19 @@ interface TitleProps {
   underline?: boolean;
 }
 
-const Title = ({ children, className = '', as: Component = 'p' ,underline = true  }: TitleProps) => {
+const Title = ({ children, className = '', as: Component = 'p', underline = true }: TitleProps) => {
   return (
-      <Component
-          className={`relative text-4xl sm:text-5xl font-semibold uppercase tracking-wider   ${Component === 'h1' && 'lg:text-6xl '} ${underline && 'mb-12'} ${className}`}
-      >
-           <span
-               className="relative block text-transparent bg-clip-text bg-gradient-to-r from-neon-pink via-neon-purple to-neon-blue">
-              {children}
+    <Component
+      className={`relative text-4xl sm:text-5xl font-semibold uppercase tracking-wider   ${Component === 'h1' && 'lg:text-6xl '} ${underline && 'mb-12'} ${className}`}
+    >
+      <span
+        className="relative block text-transparent bg-clip-text bg-gradient-to-r from-neon-pink via-neon-purple to-neon-blue">
+        {children}
 
-            </span>
-        {underline && <span className="absolute -bottom-3 left-0 h-1 w-44  bg-gradient-to-r from-pink-400 to-blue-400 rounded-full mt-2"/>}
+      </span>
+      {underline && <span className="absolute -bottom-3 left-0 h-1 w-44  bg-gradient-to-r from-neon-pink to-neon-blue rounded-full mt-2" />}
 
-      </Component>
+    </Component>
   );
 };
 

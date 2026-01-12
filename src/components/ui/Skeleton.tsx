@@ -1,6 +1,6 @@
 import React from "react";
 
-function Skeleton({
+export default function Skeleton({
   className = "",
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
@@ -11,4 +11,3 @@ function Skeleton({
     />
   );
 }
-export default Skeleton;

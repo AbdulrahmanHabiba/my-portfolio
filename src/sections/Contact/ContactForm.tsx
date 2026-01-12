@@ -46,49 +46,49 @@ function ContactForm() {
     <form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="flex-1 bg-card border border-secondary rounded-2xl shadow-lg p-8 flex flex-col gap-5  w-full mx-auto animate-fadeIn"
+      className="flex-1 bg-card border border-border rounded-2xl shadow-lg p-8 flex flex-col gap-5  w-full mx-auto animate-fadeIn glass-card"
       style={{ overflow: "visible" }}
     >
-      <label className="dark:text-new-gray text-sm font-medium">
+      <label className="text-foreground text-sm font-medium">
         Name
         <input
           name="name"
           type="text"
-          className="mt-1 w-full bg-secondary/10 border border-input rounded-md px-3 py-2 dark:text-white dark:placeholder:text-new-gray focus:outline-none focus:ring-2 focus:ring-pink-400/50 transition"
+          className="mt-1 w-full bg-input/50 border border-input rounded-md px-3 py-2 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-neon-purple/50 transition"
           placeholder="Your Name"
           required
         />
         {errors.name && (
-          <span className="text-pink-800 dark:text-pink-400 text-xs mt-1 block">
+          <span className="text-neon-pink text-xs mt-1 block">
             {errors.name}
           </span>
         )}
       </label>
-      <label className="text-new-gray text-sm font-medium">
+      <label className="text-foreground text-sm font-medium">
         Email
         <input
           name="email"
           type="email"
-          className="mt-1 w-full bg-secondary/10 border border-input rounded-md px-3 py-2 dark:text-white dark:placeholder:text-new-gray focus:outline-none focus:ring-2 focus:ring-pink-400/50 transition"
+          className="mt-1 w-full bg-input/50 border border-input rounded-md px-3 py-2 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-neon-purple/50 transition"
           placeholder="you@email.com"
           required
         />
         {errors.email && (
-          <span className="text-pink-800 dark:text-pink-400 text-xs mt-1 block">
+          <span className="text-neon-pink text-xs mt-1 block">
             {errors.email}
           </span>
         )}
       </label>
-      <label className="text-new-gray text-sm font-medium">
+      <label className="text-foreground text-sm font-medium">
         Message
         <textarea
           name="message"
-          className="mt-1 w-full bg-secondary/10 border border-input rounded-md px-3 py-2 dark:text-white dark:placeholder:text-new-gray focus:outline-none focus:ring-2 focus:ring-pink-400/50 transition min-h-[100px]"
+          className="mt-1 w-full bg-input/50 border border-input rounded-md px-3 py-2 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-neon-purple/50 transition min-h-[100px]"
           placeholder="Your message..."
           required
         />
         {errors.message && (
-          <span className="text-pink-800 dark:text-pink-400 text-xs mt-1 block">
+          <span className="text-neon-pink text-xs mt-1 block">
             {errors.message}
           </span>
         )}

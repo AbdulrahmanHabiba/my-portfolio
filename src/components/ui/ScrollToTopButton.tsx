@@ -24,7 +24,7 @@ const ScrollToTopButton: React.FC = () => {
         visible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
-      <GoArrowUp size={22} className="text-pink-800 dark:text-pink-800 " />
+      <GoArrowUp size={22} className="text-pink-400" />
     </button>
   );
 };

@@ -5,15 +5,18 @@ import Portfolio from "@/sections/Portfolio/Portfolio";
 import Contact from "@/sections/Contact/Contact";
 import Container from "@/components/layout/Container";
 import About from "@/sections/About/About";
+import Experience from "@/sections/Experience/Experience";
+
 export default function Home() {
   return (
-        <Container>
-    <Hero />
-    <About />
-    <Services />
-    <Skills />
-    <Portfolio />
-    <Contact />
-  </Container>
-  )
+    <Container>
+      <Hero />
+      <About />
+      <Experience />
+      <Services />
+      <Skills />
+      <Portfolio />
+      <Contact />
+    </Container>
+  );
 }
