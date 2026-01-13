@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Container from "@/components/layout/Container";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { IoClose } from "react-icons/io5";
 import { HiMenu } from "react-icons/hi";
