@@ -79,7 +79,7 @@ const Header = () => {
 
   return (
     <nav className="fixed top-4 left-0 w-full z-50 px-4">
-      <Container>
+      <div className="sm:px-6 xl:px-10">
         <div
           className={`glass border border-border shadow-2xl rounded-3xl px-3 py-2 lg:px-6 lg:py-3 flex flex-col lg:flex-row items-start lg:items-center justify-between transition-all duration-300 ease-in-out overflow-hidden ring-1 ring-neon-purple/10 relative ${isOpen
             ? "max-h-[500px] scale-100"
@@ -140,7 +140,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </Container>
+      </div>
     </nav>
   );
 };

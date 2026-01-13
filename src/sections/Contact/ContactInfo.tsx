@@ -9,7 +9,7 @@ function SocialIcon({ url, label, children }: { url: string; label: string; chil
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="group inline-flex items-center justify-center w-10 h-10 rounded-full bg-card/80 dark:bg-card/60 hover:text-neon-purple dark:hover:text-neon-purple  text-foreground transition-all duration-300 border-2 border-border/50 dark:border-border/40 hover:border-neon-purple hover:scale-110 shadow-md hover:shadow-lg"
+      className="group inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-card/80 dark:bg-card/60 hover:text-neon-purple dark:hover:text-neon-purple  text-foreground transition-all duration-300 border-2 border-border/50 dark:border-border/40 hover:border-neon-purple hover:scale-110 shadow-md hover:shadow-lg"
     >
       <span className="flex items-center justify-center text-lg">
         {children}
@@ -21,11 +21,11 @@ function SocialIcon({ url, label, children }: { url: string; label: string; chil
 const socialLinks = [
   { icon: <FaLinkedin size={22} />, url: "https://www.linkedin.com/in/abdulrahman-habiba", label: "LinkedIn" },
   { icon: <FaGithub size={22} />, url: "https://github.com/AbdulrahmanHabiba", label: "GitHub" },
-    { icon: <FaEnvelope size={22} />, url: "mailto:abdulrahmanhabibh@gmail.com", label: "Email" },
+  { icon: <FaEnvelope size={22} />, url: "mailto:abdulrahmanhabibh@gmail.com", label: "Email" },
   { icon: <FaWhatsapp size={22} />, url: "https://wa.me/201113951795", label: "WhatsApp" },
-  { icon: <FaTelegram size={22} /> ,url: "https://t.me/Abdulrahman_hsan", label: "Telegram"},
+  { icon: <FaTelegram size={22} />, url: "https://t.me/Abdulrahman_hsan", label: "Telegram" },
   { icon: <FaFacebook size={22} />, url: "https://www.facebook.com/abdulrahmanhsan.habiba.3", label: "Facebook" },
-    { icon: <FaInstagram size={22} /> ,url: "https://www.instagram.com/abdulrahman.habibh" , label: "Instagram"}
+  { icon: <FaInstagram size={22} />, url: "https://www.instagram.com/abdulrahman.habibh", label: "Instagram" }
 
 ];
 
@@ -39,7 +39,7 @@ function ContactInfo() {
       {/* Social Icons - Prominent Display */}
       <div className="mb-6">
         <span className="block text-sm font-medium text-foreground mb-4 uppercase tracking-wider">Connect With Me</span>
-        <div className="flex gap-4 flex-wrap">
+        <div className="flex gap-3 sm:gap-4 flex-wrap">
           {socialLinks.map((s, i) => (
             <SocialIcon key={i} url={s.url} label={s.label}>{s.icon}</SocialIcon>
           ))}
