@@ -15,13 +15,10 @@ import {
   SiShadcnui,
   SiSanity,
   SiReactquery,
-  SiTestinglibrary,
   SiFirebase,
-  SiMongodb,
   SiZod,
 } from "react-icons/si";
 import { FaRegCircle } from "react-icons/fa";
-import { MdOutlineAccountCircle } from "react-icons/md";
 import { RiShieldKeyholeFill } from "react-icons/ri";
 import Title from "@/components/ui/Title";
 import SectionMotion from "@/components/ui/SectionMotion";

@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useAuth } from "@/lib/hooks/useAuth";
 import { Link } from "react-router-dom";
-import { FaUser, FaSignInAlt, FaSignOutAlt, FaCog } from "react-icons/fa";
+import { FaUser, FaSignOutAlt, FaCog } from "react-icons/fa";
 
 export function UserAvatar() {
     const { user, signOut } = useAuth();

@@ -40,10 +40,10 @@ const Education = () => {
             <div className="absolute -left-4 top-1 w-3 h-3 bg-neon-pink rounded-full shadow-lg"></div>
             <p className="text-sm text-muted-foreground">{item.year}</p>
             <h4 className="text-foreground font-semibold text-base mt-1">
-              {item.title}
+              {item.degree}
             </h4>
             <p className="text-blue-500 dark:text-blue-400 text-sm italic mb-2 font-semibold">
-              {item.place}
+              {item.institution}
             </p>
             <p
               className="text-muted-foreground text-sm leading-relaxed"

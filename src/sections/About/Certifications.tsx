@@ -1,4 +1,4 @@
-import { SiReact, SiJavascript, SiPostgresql } from "react-icons/si";
+import { SiReact, SiPostgresql } from "react-icons/si";
 import { FaGraduationCap } from "react-icons/fa";
 
 const certifications = [
