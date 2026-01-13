@@ -38,7 +38,7 @@ const NavLinks = ({
           className="
             lg:text-muted-foreground lg:hover:text-neon-pink lg:transition lg:font-medium lg:text-[14px]! lg:tracking-wide lg:py-0 lg:px-0 lg:rounded-none lg:text-sm lg:text-left
             lg:bg-transparent lg:shadow-none lg:p-0
-            text-foreground font-bold tracking-wide py-3 px-4 rounded-2xl w-full block transition-all duration-200 text-base text-center
+            text-foreground font-bold tracking-wide py-2 px-3 rounded-xl w-full block transition-all duration-200 text-[15px] text-center
             hover:bg-neon-pink/10 hover:text-neon-pink lg:hover:bg-transparent
           "
         >
@@ -49,7 +49,7 @@ const NavLinks = ({
           className="
             lg:text-muted-foreground lg:hover:text-neon-pink lg:transition lg:font-medium lg:text-[14px]! lg:tracking-wide lg:py-0 lg:px-0 lg:rounded-none lg:text-sm lg:text-left
             lg:bg-transparent lg:shadow-none lg:p-0
-            text-foreground font-bold tracking-wide py-3 px-4 rounded-2xl w-full block transition-all duration-200 text-base text-center
+            text-foreground font-bold tracking-wide py-2 px-3 rounded-xl w-full block transition-all duration-200 text-[15px] text-center
             hover:bg-neon-pink/10 hover:text-neon-pink lg:hover:bg-transparent
           "
         >
@@ -133,7 +133,7 @@ const Header = () => {
           >
             <NavLinks
               onClick={() => setIsOpen(false)}
-              className="flex flex-col w-full gap-2"
+              className="flex flex-col w-full gap-1"
             />
             <div className="flex items-center justify-center pt-2 border-t border-border w-full">
               <LanguageSwitcher />

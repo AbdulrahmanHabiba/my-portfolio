@@ -15,7 +15,7 @@ export default function Hero() {
 
   return (
     <section id="Hero" className="scroll-mt-24">
-      <SectionMotion className="pt-4 md:pt-16 text-foreground flex justify-center items-center  min-h-[calc(100vh-100px)] scroll-mt-24">
+      <SectionMotion className="pt-28 md:pt-16 text-foreground flex justify-center items-center min-h-[calc(100dvh-100px)] scroll-mt-24">
         <div className="flex flex-col-reverse md:flex-row gap-8 justify-between items-center w-full">
           <div className="text-center md:text-left space-y-4 max-w-md ">
             <Title as={"h1"} underline={false}>
@@ -33,12 +33,12 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <AppButton variant="primary">
+                <AppButton variant="primary" size="sm" className="md:size-md px-4 md:px-6 h-9 md:h-11 text-xs md:text-sm">
                   Download CV <FaDownload className="inline ml-2" />
                 </AppButton>
               </a>
               <a href="/#contact">
-                <AppButton variant="outline">
+                <AppButton variant="outline" size="sm" className="md:size-md px-4 md:px-6 h-9 md:h-11 text-xs md:text-sm">
                   Contact Me <FaPaperPlane className="inline ml-2" />
                 </AppButton>
               </a>

@@ -56,7 +56,7 @@ const ProjectCard = ({
   const hasCodeLink = Boolean(code);
 
   return (
-    <div className="group relative flex flex-col bg-card/80 dark:bg-card/60 border-2 border-border/60 dark:border-border/40 rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:border-neon-purple/50 hover:shadow-2xl backdrop-blur-md">
+    <div className="group relative flex flex-col bg-card/80 dark:bg-card/60 border-2 border-border/60 dark:border-border/40 rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:border-neon-purple/50 hover:shadow-2xl active:border-neon-purple/50 active:shadow-2xl backdrop-blur-md">
       {/* Project Image */}
       <div
         {...(!isMobile ? dragHandleProps : {})}
@@ -74,7 +74,7 @@ const ProjectCard = ({
           src={displayImage}
           alt={title}
           loading="lazy"
-          className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${imgLoaded ? "opacity-100" : "opacity-0"
+          className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 group-active:scale-105 ${imgLoaded ? "opacity-100" : "opacity-0"
             }`}
           onLoad={() => setImgLoaded(true)}
         />
@@ -96,7 +96,7 @@ const ProjectCard = ({
             return (
               <span
                 key={t}
-                className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-primary/5 dark:bg-primary/10 text-foreground border border-primary/20 dark:border-primary/30 font-medium hover:bg-primary/10 dark:hover:bg-primary/20 transition-all max-h-8"
+                className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-primary/5 dark:bg-primary/10 text-foreground border border-primary/20 dark:border-primary/30 font-medium hover:bg-primary/10 dark:hover:bg-primary/20 active:bg-primary/10 dark:active:bg-primary/20 transition-all max-h-8"
               >
                 {Icon && <Icon className="text-sm opacity-70" />} {t}
               </span>
@@ -152,7 +152,7 @@ const ProjectCard = ({
           ) : (
             <>
               {/* Live link */}
-              {hasLiveLink ? (
+              {hasLiveLink && (
                 <a
                   href={link}
                   target="_blank"
@@ -167,17 +167,18 @@ const ProjectCard = ({
                     Live <RiLinksFill size={18} />
                   </AppButton>
                 </a>
-              ) : (
-                <AppButton
-                  variant="outline"
-                  size="sm"
-                  disabled
-                  className="flex-1 opacity-70 cursor-not-allowed !px-1"
-                >
-                  <p className="text-black dark:text-amber-300">
-                    Under development 😞
-                  </p>
-                </AppButton>
+                // ) : (
+                //   <AppButton
+                //     variant="outline"
+                //     size="sm"
+                //     disabled
+                //     className="flex-1 opacity-70 cursor-not-allowed !px-1"
+                //   >
+                //     <p className="text-black dark:text-amber-300">
+                //       Under development 😞
+                //     </p>
+                //   </AppButton>
+                // 
               )}
 
               {/* Code link */}

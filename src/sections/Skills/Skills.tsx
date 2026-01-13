@@ -119,7 +119,7 @@ const Skills = () => (
                 key={skill.name}
                 className="flex flex-col items-center group"
               >
-                <div className="rounded-full bg-secondary shadow-lg p-5  transition-transform duration-300 group-hover:scale-110 group-hover:shadow-pink-400/40 group-focus:scale-110 group-focus:shadow-pink-400/40">
+                <div className="rounded-full bg-secondary shadow-lg p-5  transition-transform duration-300 group-hover:scale-110 group-hover:shadow-pink-400/40 group-focus:scale-110 group-focus:shadow-pink-400/40 group-active:scale-110 group-active:shadow-pink-400/40">
                   {skill.icon}
                 </div>
                 <span className="mt-2 text-sm  text-muted-foreground text-center">
@@ -139,7 +139,7 @@ const Skills = () => (
                 key={skill.name}
                 className="flex flex-col items-center group my-2"
               >
-                <div className="rounded-full bg-secondary shadow-lg p-4  transition-transform duration-300 group-hover:scale-110 group-hover:shadow-pink-400/40 group-focus:scale-110 group-focus:shadow-pink-400/40">
+                <div className="rounded-full bg-secondary shadow-lg p-4  transition-transform duration-300 group-hover:scale-110 group-hover:shadow-pink-400/40 group-focus:scale-110 group-focus:shadow-pink-400/40 group-active:scale-110 group-active:shadow-pink-400/40">
                   {skill.icon}
                 </div>
                 <span className="mt-2 text-sm  text-muted-foreground text-center">
